@@ -1,0 +1,17 @@
+<ion-tabs>
+  <ion-tab-bar slot ="bottom">
+<ion-tab-button routerLink="/home">
+  <ion-icon name="home"></ion-icon>
+  <ion-label>Home</ion-label>
+</ion-tab-button>
+<ion-tab-button routerLink="/cart" >
+    <ion-icon name="cart"></ion-icon>
+    <ion-label>Cart<sup> {{cartService.navbarCartCount}}</sup></ion-label>
+  </ion-tab-button>
+  <ion-tab-button routerLink="/favourite">
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>Favorite<sup> {{favouriteService.navbarFavProdCount}}</sup></ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+ 
+</ion-tabs>

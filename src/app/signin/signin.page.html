@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons >
+        <ion-menu-button>    
+        </ion-menu-button>
+      </ion-buttons>
+    <ion-title>Signin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form">
+    <ion-list>
+      <ion-item>
+        <ion-input ngModel type="email" placeholder="Email" name="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input ngModel type="password" placeholder="Password"  name="password"></ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <div padding>
+      <ion-button type="submit" class="button" >Sign In</ion-button>
+    </div>
+  </form>
+  <a routerLink ="/signup" >Don't have an account? Sign up</a>
+  </ion-content>

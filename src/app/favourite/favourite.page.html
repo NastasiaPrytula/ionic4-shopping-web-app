@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons >
+          <ion-menu-button>    
+          </ion-menu-button>
+        </ion-buttons>
+    <ion-title>
+        Favourites
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let products of favoruiteProducts" class="products-list"> 
+    <ion-card-header>
+      <ion-card-title>{{products.name}}</ion-card-title>
+    </ion-card-header>
+          
+  <ion-card-content>
+    Price: {{products.price}} USD
+      <ion-img [src]="products.imagePath" alt="{{ products.imagePath }}" class="img-responsive"></ion-img>
+  </ion-card-content>
+    <ion-button (click)='removeFavourite(products)' class="delete"><ion-icon name="trash"></ion-icon>
+    </ion-button>
+  </ion-card>
+</ion-content>

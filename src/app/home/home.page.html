@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    
+    <ion-title>
+        Products
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+        <!-- <ion-searchbar
+        type="text"
+        [showCancelButton]="shouldShowCancel"
+        [(ngModel)]="term">
+      </ion-searchbar> -->
+      <!-- <ion-searchbar
+      [(ngModel)]="name" placeholder="Search" (input)="Search()">
+    </ion-searchbar> -->
+    <!-- <ion-searchbar (ionInput)="Search()"  [(ngModel)]="name"></ion-searchbar> -->
+    <!--  -->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-button  class="sort"  (click)="sort()">Sort by Price
+      <ion-icon name="funnel" md="md-funnel"></ion-icon>
+    </ion-button >
+         
+    <ion-list>
+      <ion-card *ngFor="let products of  items"  class="products-list"> 
+        <ion-card-header>
+          <ion-card-title>{{products.name}}</ion-card-title>
+        </ion-card-header>
+          
+    <ion-card-content>
+      Price: {{products.price}} USD
+        <ion-img [src]="products.imagePath" alt="{{ products.imagePath }}" class="img-responsive"></ion-img>
+    </ion-card-content>
+
+    <div class=" button">
+      <ion-button (click)="add(products)"> <ion-icon name="heart"></ion-icon></ion-button>
+      <ion-button (click)="addToCart(products)"><ion-icon name="cart"></ion-icon></ion-button>
+    </div>
+      </ion-card>
+    </ion-list>
+</ion-content>
+
+    

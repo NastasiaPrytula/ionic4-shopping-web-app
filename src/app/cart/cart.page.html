@@ -1,0 +1,26 @@
+<ion-header>
+   <ion-toolbar>
+      <ion-buttons >
+          <ion-menu-button>    
+          </ion-menu-button>
+        </ion-buttons>
+    <ion-title>
+        Cart
+     </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let product of cartProducts" class="products-list"> 
+    <ion-card-header>
+      <ion-card-title>{{product.name}}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      Price: {{product.price}} USD
+      <ion-img [src]="product.imagePath" alt="{{ product.imagePath }}" class="img-responsive"></ion-img>
+        </ion-card-content>
+          <ion-button (click)="removeCartProduct(product)" class="delete"><ion-icon name="trash" ></ion-icon></ion-button>  
+  </ion-card>
+</ion-content>
+    
