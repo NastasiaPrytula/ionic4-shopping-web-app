@@ -12,23 +12,14 @@
 </ion-header>
 
 <ion-content padding>
-        <!-- <ion-searchbar
-        type="text"
-        [showCancelButton]="shouldShowCancel"
-        [(ngModel)]="term">
-      </ion-searchbar> -->
-      <!-- <ion-searchbar
-      [(ngModel)]="name" placeholder="Search" (input)="Search()">
-    </ion-searchbar> -->
-    <!-- <ion-searchbar (ionInput)="Search()"  [(ngModel)]="name"></ion-searchbar> -->
-    <!--  -->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-    <ion-button  class="sort"  (click)="sort()">Sort by Price
+  <ion-searchbar [showCancelButton]="shouldShowCancel" [(ngModel)]="term" required>
+  </ion-searchbar>
+    <ion-button  class="sort" clear item-end   (click)="sort()">Sort by Price
       <ion-icon name="funnel" md="md-funnel"></ion-icon>
     </ion-button >
          
     <ion-list>
-      <ion-card *ngFor="let products of  items"  class="products-list"> 
+      <ion-card *ngFor="let products of  productsList | filter:term | sort: {property: column, order: order}"  class="products-list"> 
         <ion-card-header>
           <ion-card-title>{{products.name}}</ion-card-title>
         </ion-card-header>

@@ -27,8 +27,7 @@ import { FavouriteServiceService } from './services/favourite-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SortPipe
+    AppComponent
   ],
 
   entryComponents: [ ],

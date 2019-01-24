@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderPipe } from 'ngx-order-pipe';
 import { FilterPipe } from 'ngx-filter-pipe';
 import { NavController } from '@ionic/angular';
+import { SortPipe } from '../sort.pipe';
 
 import { Products } from './Products';
 import { ProductsService } from '../services/products.service';
@@ -66,5 +67,10 @@ export class HomePage implements OnInit{
 
   addToCart(products: Products) {
     this.cartService.addToCart(products);
+  }
+  
+  sort(){
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
   }
  }
