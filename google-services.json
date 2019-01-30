@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "429353138596",
+    "firebase_url": "https://shopping-backend-firebas-15106.firebaseio.com",
+    "project_id": "shopping-backend-firebas-15106",
+    "storage_bucket": "shopping-backend-firebas-15106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429353138596:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429353138596-ns5amfatovmstlvppph29np86k01qh00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzqv4VI8KV0NGQt_7H9m9yi-_Hn8aDUEk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

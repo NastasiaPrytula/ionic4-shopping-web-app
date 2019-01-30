@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { Firebase } from '@ionic-native/firebase/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -54,7 +55,8 @@ import { FavouriteServiceService } from './services/favourite-service.service';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ProductsService,
     CartServiceService,
-    FavouriteServiceService
+    FavouriteServiceService,
+    Firebase
 
   ],
  

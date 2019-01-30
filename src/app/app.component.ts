@@ -9,6 +9,8 @@ import { CartServiceService } from './services/cart-service.service';
 import { FavouriteServiceService } from './services/favourite-service.service';
 import { ProductsService } from './services/products.service';
 
+import { FcmService } from './fcm.service';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -26,15 +28,37 @@ export class AppComponent {
     public authService: AuthService,
           public ProductsService: ProductsService,
           public favouriteService: FavouriteServiceService,
-          public cartService: CartServiceService
+          public cartService: CartServiceService,
+          public toastController: ToastController,
+          private fcm: FcmService
   ) {
     this.initializeApp();
+  }
+  private async presentToast(message) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 3000
+    });
+    toast.present();
+  }
+
+  private notificationSetup() {
+    this.fcm.getToken();
+    this.fcm.onNotifications().subscribe(
+      (msg) => {
+        if (this.platform.is('ios')) {
+          this.presentToast(msg.aps.alert);
+        } else {
+          this.presentToast(msg.body);
+        }
+      });
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.notificationSetup();
     });
   }
  

@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-searchbar [showCancelButton]="shouldShowCancel" [(ngModel)]="term" required>
+  <ion-searchbar [(ngModel)]="term" required>
   </ion-searchbar>
     <ion-button  class="sort" clear item-end   (click)="sort()">Sort by Price
       <ion-icon name="funnel" md="md-funnel"></ion-icon>
